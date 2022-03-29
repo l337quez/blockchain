@@ -1,5 +1,5 @@
-## **Pasos para hacer Deploy con Truffle y Ganache**
-Estos son los pasos que debemos seguir para hacer deploy con el framework Truffle.  
+## **Testiar contracto inteligente**
+Documentacion aqui https://trufflesuite.com/docs/truffle/testing/testing-your-contracts.html 
 
 </br>
 

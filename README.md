@@ -8,6 +8,7 @@ Mis apuntes sobre blockchain
 * [Que son Dapps](#dapps)
 * [Requerimientos para Ethereum en GNU Linux ARCH](#req_ethereum)
 * * [Que es Truffle](#Truffle)
+* * [Hacer Test con Truffle](#testTruffle)
 * * [Que es Ganache](#ganache)
 * * [Que es Hardhat](#hardhat)
 
@@ -88,14 +89,54 @@ truffle init
 ```
 truffle compile
 ```
+* Para unicamente levantar el contracto
+```
+truffle migrate
+```
 * Para hacer deploy. Bueno el deploy compila y luego sube. Es importante hacer unas configuraciones antes
 [Configuracion para el deploy](https://github.com/l337quez/blockchain/blob/main/how%20make%20deploy.md) 
 ```
 truffle deploy
 ```
+* Para interectuar con los contractos desde la terminal  
+```
+truffle console
+```
+Podremos intereactuar con el contracto despplegado o deployado. Si nuestro contracto se llama TasksContract lo podremos guardar de esta manera en una variable  
+ <br/>
+
+TasksContract = await TasksContract.deployed()  
 
  <br/>
- 
+
+**Direccion del Contracto en mi Blockchain**
+Ya tenemos la clase instanciada, esta tiene una propiedad llamada address, donde podremos ver la direccion del contrato
+
+<br/>
+
+TasksContract.address
+
+<br/>
+
+Ya hemos instanciado en la consola de Truffle la clase TasksContract de nuestro contracto, ahora podemos ingresar a sus metodos o variables siempre y cuando sean **public**. Podemos hacer uso del metodo await cuando es un proceso asincrono.  
+Vamos a ingresar a la variable task que es un mapping, ya tenemos instanciado la clase en una variable llamada TasksContract, entonces usamos esa instancia creada. Pero como es un mapping esto no puede retornar todo lo que tenga, hay que enviar un numero que indicaria la posicion en la structura.
+
+ <br/>
+
+ tasks = await TasksContract.tasks(0)  
+
+  <br/>
+
+ Truffle tiene una estructura de directorios, en la carpeta contracts vamos a escribir los contractos. Recordemos que en la blockchain no existe una base de datos sql o nosql, sino que la misma blockchain es una base de datos, entonces si queremos hacer una migracion para subir algun contracto inteligente, eso lo debemos hacer dentro de la carpeta de migrations. Dentro de la carpeta test vamos agregar los testing de nuestro smarth contract.
+
+<br/>
+
+<br/>
+
+  <a name="testTruffle"></a>
+### **Hacer Test con Truffle**
+Los test son muy importantes porque todo cuesta dinero, asi que antes de subir el contracto debemos probarlo muy bien.  [Apartado de Testing](https://github.com/l337quez/blockchain/blob/main/how%20make%20test.md) 
+
 <br/>
 
   <a name="ganache"></a>
