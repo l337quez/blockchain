@@ -98,6 +98,11 @@ truffle migrate
 ```
 truffle deploy
 ```
+
+* Reiniciar y volver a ejecutar el contracto
+```
+truffle migrate --reset
+```
 * Para interectuar con los contractos desde la terminal  
 ```
 truffle console
