@@ -16,6 +16,15 @@ Mis apuntes sobre blockchain
 
 
  <br/>
+
+ **Como correr el proyecto**  
+ En el directorio "myfirstcontract" hay un pequeño proyecto, 
+ para correr el proyecto
+```
+ npm run dev
+```
+
+ <br/>
  
   <a name="Blockchain"></a>
 ### **Que es la Blockchain**

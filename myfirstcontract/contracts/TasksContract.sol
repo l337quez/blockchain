@@ -4,9 +4,6 @@ pragma solidity ^0.8.6;
 contract  TasksContract {
     uint public taskCounter = 0;
 
-    constructor(){
-        createTask("mi primer tarea", "tengo que hacer algo");
-    }
 
     // event hacen referencia a que algo ya paso. Con esto podremos guardar en los logs 
     event TaskCreated (
@@ -28,6 +25,9 @@ contract  TasksContract {
         uint256 createAt;
     }
 
+    constructor(){
+        createTask("mi primer tarea", "tengo que hacer algo");
+    }
 
 // ** GET
 // esto es como un buscador por id
